@@ -1,5 +1,5 @@
 import telebot
-from token import TOKEN
+from tg_token import TOKEN
 from menu import main_menu
 from faq import FAQ, faq_keyboard
 from ai import ask_support_ai
@@ -40,4 +40,5 @@ def support_reply(message):
 
 print("Бот запущен")
 bot.polling()
+
 
