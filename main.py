@@ -40,3 +40,4 @@ def support_reply(message):
 
 print("Бот запущен")
 bot.polling()
+
