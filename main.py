@@ -10,7 +10,7 @@ bot = telebot.TeleBot(TOKEN)
 def start(message):
     bot.send_message(
         message.chat.id,
-        "Привет! 👋 Я техподдержка InfinityHub. Выбери действие:",
+        "Привет! 👋 Я техподдержка AqmolaStart. Выбери действие:",
     reply_markup=main_menu()
     )
 
@@ -40,5 +40,6 @@ def support_reply(message):
 
 print("Бот запущен")
 bot.polling()
+
 
 
