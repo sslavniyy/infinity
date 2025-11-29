@@ -1,13 +1,9 @@
 import telebot
-import os
-from dotenv import load_dotenv
+from token import TOKEN
 from menu import main_menu
 from faq import FAQ, faq_keyboard
 from ai import ask_support_ai
 
-load_dotenv()
-
-TOKEN = os.getenv("token")
 bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(commands=['start'])
@@ -15,7 +11,7 @@ def start(message):
     bot.send_message(
         message.chat.id,
         "Привет! 👋 Я техподдержка InfinityHub. Выбери действие:",
-        reply_markup=main_menu()
+    reply_markup=main_menu()
     )
 
 @bot.message_handler(func=lambda m: m.text == "❓FAQ")
@@ -41,7 +37,6 @@ def support_reply(message):
     bot.send_chat_action(message.chat.id, 'typing')
     answer = ask_support_ai(message.text, user_id=message.chat.id)
     bot.send_message(message.chat.id, answer, reply_markup=main_menu())
-
 
 print("Бот запущен")
 bot.polling()
