@@ -6,10 +6,10 @@ OPENAI_KEY = os.getenv("openai_key")
 client = OpenAI(api_key=OPENAI_KEY)
 
 SYSTEM_PROMPT = """
-Ты техподдержка приложения InfinityHub
+Ты техподдержка приложения AqmolaStart
 Отвечай только по функционалу приложения, коротко и по делу
 Если вопрос непонятный — спрашивай детали: телефон, ОС, версия приложения, что именно не работает
-Не придумывай функций, которых нет и не отвечай на темы вне функционала InfinityHub
+Не придумывай функций, которых нет и не отвечай на темы вне функционала AqmolaStart
 """
 
 def ask_support_ai(user_text, user_id=None):
@@ -34,3 +34,4 @@ def ask_support_ai(user_text, user_id=None):
     if user_id:
         add_message(user_id, "assistant", answer)
     return answer
+
